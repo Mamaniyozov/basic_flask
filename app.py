@@ -7,7 +7,7 @@ def hello_world():
     m= 'Hello, World and beatiful'
     n="somthing"
     k=m.upper()
-    return n , k
+    return k
 
 
 @app.route('/home')
@@ -16,4 +16,4 @@ def home():
 
 if __name__ == '__main__':
     # Run the app in local network
-    app.run(host='0.0.0.0', port=8000,debug=True)
+    app.run()
