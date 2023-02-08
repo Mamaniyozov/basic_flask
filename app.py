@@ -4,7 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World and beatiful'
+    m= 'Hello, World and beatiful'
+    n="somthing"
+    k=m.upper()
+    return n , k
+
 
 @app.route('/home')
 def home():
