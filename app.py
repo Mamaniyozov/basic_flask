@@ -38,7 +38,7 @@ def table():
     df['Address'] = address
 
 # Observe the result
-    return df
+    return str( df)
 
 
 
