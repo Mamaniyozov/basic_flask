@@ -15,7 +15,7 @@ def home():
     return 'Home Page!!'
 @app.route('/about')
 def about():
-    return "welcome to my web sayt"
+    return ("welcome to my web sayt").upper()
 
 if __name__ == '__main__':
     # Run the app in local network
