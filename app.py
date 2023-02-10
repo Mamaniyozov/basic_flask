@@ -1,44 +1,34 @@
-from flask import Flask
-import pandas as pd
+from flask import Flask,request
+
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route('/',methods=['GET','POST'])
 def hello_world():
-    m= 'Hello, World and beatiful'
-    n="somthing"
-    k=m.upper()
-    return k
-
-
-@app.route('/home')
+    r=request.args
+    a=int(r['a'])
+    b=int(r['b'])
+    # data = {
+    #     'a': 15,
+    #     'b': 2,
+    #     'c': 5,
+    #     'g': 10
+    # }
+   
+    s=a+b
+    return {"summa":s}
 def home():
     return 'Home Page!!;)'
 @app.route('/about')
 def about():
     return ("welcome to my web sayt:)").title()
-@app.route('/table')
-def table():
-    # Import pandas package
 
 
-# Define a dictionary containing Students data
-    data = {'Name': ['Jai', 'Princi', 'Gaurav', 'Anuj'],
-            'Height': [5.1, 6.2, 5.1, 5.2],
-            'Qualification': ['Msc', 'MA', 'Msc', 'Msc']}
+    # or just {{ table }} from within a Jinja template
+    # Observe the result    
 
-    # Convert the dictionary into DataFrame
-    df = pd.DataFrame(data)
-
-    # Declare a list that is to be converted into a column
-    address = ['Delhi', 'Bangalore', 'Chennai', 'Patna']
-
-    # Using 'Address' as the column name
-    # and equating it to the list
-    df['Address'] = address
-
-# Observe the result
-    return str( df)
+    
 
 
 
